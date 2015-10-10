@@ -1,17 +1,21 @@
 class nodejs::params {
-  $legacy_debian_symlinks      = false
-  $nodejs_debug_package_ensure = 'absent'
-  $nodejs_dev_package_ensure   = 'absent'
-  $nodejs_package_ensure       = 'present'
-  $repo_enable_src             = false
-  $repo_ensure                 = 'present'
-  $repo_pin                    = false
-  $repo_priority               = 'absent'
-  $repo_proxy                  = 'absent'
-  $repo_proxy_password         = 'absent'
-  $repo_proxy_username         = 'absent'
-  $repo_url_suffix             = 'node_0.10'
-  $use_flags                   = ['npm', 'snapshot']
+  $legacy_debian_symlinks               = false
+  $nodejs_debug_package_ensure          = 'absent'
+  $nodejs_debug_package_install_options = undef
+  $nodejs_dev_package_ensure            = 'absent'
+  $nodejs_dev_package_install_options   = undef
+  $nodejs_package_ensure                = 'present'
+  $nodejs_package_install_options       = undef
+  $npm_package_install_options          = undef
+  $repo_enable_src                      = false
+  $repo_ensure                          = 'present'
+  $repo_pin                             = false
+  $repo_priority                        = 'absent'
+  $repo_proxy                           = 'absent'
+  $repo_proxy_password                  = 'absent'
+  $repo_proxy_username                  = 'absent'
+  $repo_url_suffix                      = 'node_0.10'
+  $use_flags                            = ['npm', 'snapshot']
 
   # The full path to cmd.exe is required on Windows. The system32 fact is only
   # available from Facter 2.3

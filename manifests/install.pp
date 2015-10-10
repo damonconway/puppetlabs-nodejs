@@ -16,20 +16,23 @@ class nodejs::install {
 
   # nodejs
   package { $nodejs::nodejs_package_name:
-    ensure => $nodejs::nodejs_package_ensure,
+    ensure          => $nodejs::nodejs_package_ensure,
+    install_options => $nodejs::nodejs_package_install_options,
   }
 
   # nodejs-development
   if $nodejs::nodejs_dev_package_name {
     package { $nodejs::nodejs_dev_package_name:
-      ensure => $nodejs::nodejs_dev_package_ensure,
+      ensure          => $nodejs::nodejs_dev_package_ensure,
+      install_options => $nodejs::nodejs_dev_package_install_options,
     }
   }
 
   # nodejs-debug
   if $nodejs::nodejs_debug_package_name {
     package { $nodejs::nodejs_debug_package_name:
-      ensure => $nodejs::nodejs_debug_package_ensure,
+      ensure          => $nodejs::nodejs_debug_package_ensure,
+      install_options => $nodejs::nodejs_debug_package_install_options,
     }
   }
 
@@ -48,7 +51,8 @@ class nodejs::install {
   # npm
   if $nodejs::npm_package_name {
     package { $nodejs::npm_package_name:
-      ensure => $nodejs::npm_package_ensure,
+      ensure          => $nodejs::npm_package_ensure,
+      install_options => $nodejs::npm_package_install_options,
     }
   }
 }
